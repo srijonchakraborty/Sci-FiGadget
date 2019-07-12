@@ -1,0 +1,41 @@
+c:\users\srijon-pc\documents\visual studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\bin\Debug\Sci-FiGatGet.exe.config
+c:\users\srijon-pc\documents\visual studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\bin\Debug\Sci-FiGatGet.exe
+c:\users\srijon-pc\documents\visual studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\bin\Debug\Sci-FiGatGet.pdb
+c:\users\srijon-pc\documents\visual studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\App.g.cs
+c:\users\srijon-pc\documents\visual studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGatGet_MarkupCompile.cache
+c:\users\srijon-pc\documents\visual studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGatGet.g.resources
+c:\users\srijon-pc\documents\visual studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci_FiGatGet.Properties.Resources.resources
+c:\users\srijon-pc\documents\visual studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGadGet.csproj.GenerateResource.Cache
+c:\users\srijon-pc\documents\visual studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGatGet.exe
+c:\users\srijon-pc\documents\visual studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGatGet.pdb
+C:\Users\Srijon-Pc\Documents\Visual Studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\View\MainWindow.baml
+C:\Users\Srijon-Pc\Documents\Visual Studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\View\MainWindow.g.cs
+G:\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\bin\Debug\Sci-FiGatGet.exe.config
+G:\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGatGet.exe
+G:\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGatGet.pdb
+G:\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\bin\Debug\Sci-FiGatGet.exe
+G:\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\bin\Debug\Sci-FiGatGet.pdb
+G:\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\View\MainWindow.baml
+G:\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\View\MainWindow.g.cs
+G:\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\App.g.cs
+G:\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGatGet_MarkupCompile.cache
+G:\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGatGet.g.resources
+G:\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci_FiGatGet.Properties.Resources.resources
+G:\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGadGet.csproj.GenerateResource.Cache
+G:\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGadGet.csprojResolveAssemblyReference.cache
+H:\My Project Works\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\bin\Debug\Sci-FiGatGet.exe.config
+H:\My Project Works\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGatGet.exe
+H:\My Project Works\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGatGet.pdb
+H:\My Project Works\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\bin\Debug\Sci-FiGatGet.exe
+H:\My Project Works\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGadGet.csprojResolveAssemblyReference.cache
+H:\My Project Works\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\View\MainWindow.baml
+H:\My Project Works\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\View\MainWindow.g.cs
+H:\My Project Works\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\App.g.cs
+H:\My Project Works\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGatGet_MarkupCompile.cache
+H:\My Project Works\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGatGet.g.resources
+H:\My Project Works\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci_FiGatGet.Properties.Resources.resources
+H:\My Project Works\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGadGet.csproj.GenerateResource.Cache
+H:\My Project Works\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\bin\Debug\Sci-FiGatGet.pdb
+H:\My Project Works\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\bin\Debug\MaterialDesignColors.dll
+H:\My Project Works\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\bin\Debug\MaterialDesignThemes.Wpf.dll
+H:\My Project Works\Sci-FiGadget\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGatGet_Content.g.cs

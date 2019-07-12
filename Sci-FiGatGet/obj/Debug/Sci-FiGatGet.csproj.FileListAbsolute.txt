@@ -1,0 +1,13 @@
+c:\users\srijon-pc\documents\visual studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\bin\Debug\Sci-FiGatGet.exe.config
+c:\users\srijon-pc\documents\visual studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\bin\Debug\Sci-FiGatGet.exe
+c:\users\srijon-pc\documents\visual studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\bin\Debug\Sci-FiGatGet.pdb
+c:\users\srijon-pc\documents\visual studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGatGet.csprojResolveAssemblyReference.cache
+c:\users\srijon-pc\documents\visual studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\MainWindow.baml
+c:\users\srijon-pc\documents\visual studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\MainWindow.g.cs
+c:\users\srijon-pc\documents\visual studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\App.g.cs
+c:\users\srijon-pc\documents\visual studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGatGet_MarkupCompile.cache
+c:\users\srijon-pc\documents\visual studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGatGet.g.resources
+c:\users\srijon-pc\documents\visual studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci_FiGatGet.Properties.Resources.resources
+c:\users\srijon-pc\documents\visual studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGatGet.csproj.GenerateResource.Cache
+c:\users\srijon-pc\documents\visual studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGatGet.exe
+c:\users\srijon-pc\documents\visual studio 2013\Projects\Sci-FiGatGet\Sci-FiGatGet\obj\Debug\Sci-FiGatGet.pdb

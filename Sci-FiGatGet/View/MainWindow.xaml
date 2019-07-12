@@ -1,0 +1,963 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Sci_FiGadGet.MainWindow"
+        Title="MainWindow" Height="250" Width="325" ResizeMode="NoResize" WindowStyle="None" MouseDown="Window_MouseDown" Background="{x:Null}" AllowsTransparency="True">
+    <Window.Resources>
+        <Storyboard x:Key="JarvisLogoAnime">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="path" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="90"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="180"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="270"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4" Value="360"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="path1" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="90"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4" Value="180"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:6" Value="270"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:8" Value="360"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="path2" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-90"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="-180"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="-270"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4" Value="-360"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.StrokeThickness)" Storyboard.TargetName="ellipse" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="8"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="4"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="2"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="4"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="8"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="SettingsMenuIn" x:Name="SettingsMenuInAnimation">
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="border">
+                <EasingThicknessKeyFrame KeyTime="0" Value="-536,10,19,22"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.5" Value="36,10,19,22"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="border">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="border">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="SideRecEffect" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="1.02"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="SideRecEffect" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="1.02"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnSettOneRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnSettTwoRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnSettThreeRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnSettFourRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnSettFiveRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnSettSixRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnInSettingsOne">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnInSettingsTwo">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnInSettingsThree">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnInSettingsFour">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnInSettingsFive">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnInSettingsSix">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnSettOneRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnSettTwoRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnSettThreeRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnSettFourRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnSettFiveRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnSettSixRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnInSettingsOne">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnInSettingsTwo">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnInSettingsThree">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnInSettingsFour">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnInSettingsFive">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnInSettingsSix">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnSettOneRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnSettTwoRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnSettThreeRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnSettFourRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnSettFiveRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnSettSixRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnInSettingsOne">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnInSettingsTwo">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnInSettingsThree">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnInSettingsFour">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnInSettingsFive">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnInSettingsSix">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="SettingsMenuOut">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnSettOneRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnSettTwoRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnSettThreeRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnSettFourRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnSettFiveRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnSettSixRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnInSettingsOne">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnInSettingsTwo">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnInSettingsThree">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnInSettingsFour">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnInSettingsFive">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnInSettingsSix">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnSettOneRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnSettTwoRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnSettThreeRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnSettFourRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnSettFiveRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnSettSixRec">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnInSettingsOne">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnInSettingsTwo">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnInSettingsThree">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnInSettingsFour">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnInSettingsFive">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnInSettingsSix">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="border">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="border">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="border">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="border">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="border">
+                <EasingThicknessKeyFrame KeyTime="0:0:1.2" Value="36,10,19,22"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:1.5" Value="-536,10,19,22"/>
+            </ThicknessAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource JarvisLogoAnime}"/>
+
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid Height="250" Width="325">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="77*"/>
+            <ColumnDefinition Width="37*"/>
+
+            <ColumnDefinition Width="32*"/>
+            <ColumnDefinition Width="53*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="33*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="36*"/>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="43*"/>
+        </Grid.RowDefinitions>
+        <!--<Path HorizontalAlignment="Left" Height="249.187" VerticalAlignment="Top" Data="M41.501792,1.6651771 L150.00426,1.5 L177.33837,29.502005 L323.00921,29.502005 L322.17895,222.52124 L299.58188,247.02464 L27.08788,247.68689 L16.005,238.84367 L14.667044,185.84856 L28.505,173.677 L27.957859,77.125159 L27.910164,77.109729 C12.55377,71.931678 1.5,57.454053 1.5,40.403894 C1.5,19.007617 18.907244,1.6625065 40.380166,1.6625069 C40.715681,1.6625065 41.050202,1.6667411 41.383681,1.6751607 L41.504606,1.6797387 z" Margin="-0.005,-0.177,0,0" Width="324.51" Opacity="0.995" Stroke="White">
+			<Path.Fill>
+				<RadialGradientBrush Opacity="0.6" GradientOrigin="4,4" Center="0,0">
+					<GradientStop Color="#FF1F374A" Offset="1"/>
+					<GradientStop Color="#FF99A8BD"/>
+				</RadialGradientBrush>
+			</Path.Fill>
+			<Path.Effect>
+				<BlurEffect Radius="1"/>
+			</Path.Effect>
+		</Path>
+		<Path Data="M0.50305595,1.2697373 L22.749788,24.228933 L167.82998,23.865926 L167.74531,0.52106791 z" HorizontalAlignment="Left" Height="24.75" Margin="156.5,-0.25,0,0" VerticalAlignment="Top" Width="168.333" Stroke="White">
+			<Path.Effect>
+				<BlurEffect Radius="1"/>
+			</Path.Effect>
+			<Path.Fill>
+				<RadialGradientBrush Opacity="0.52" GradientOrigin="-4,-1" Center="2,1">
+					<GradientStop Color="#FF99A8BD"/>
+					<GradientStop Color="#FF1F374A" Offset="1"/>
+				</RadialGradientBrush>
+			</Path.Fill>
+		</Path>-->
+        <Path HorizontalAlignment="Left" Height="249.187" VerticalAlignment="Top" Data="M41.501792,1.6651771 L150.00426,1.5 L177.33837,29.502005 L323.00921,29.502005 L322.17895,222.52124 L299.58188,247.02464 L27.08788,247.68689 L16.005,238.84367 L14.667044,185.84856 L28.505,173.677 L27.957859,77.125159 L27.910164,77.109729 C12.55377,71.931678 1.5,57.454053 1.5,40.403894 C1.5,19.007617 18.907244,1.6625065 40.380166,1.6625069 C40.715681,1.6625065 41.050202,1.6667411 41.383681,1.6751607 L41.504606,1.6797387 z" Margin="-1.005,-0.094,0,0" Width="324.51" Opacity="0.995" Stroke="White" Grid.RowSpan="8" Grid.ColumnSpan="8">
+            <Path.Fill>
+                <RadialGradientBrush Opacity="0.7" GradientOrigin="4,4" Center="0,0">
+                    <GradientStop Color="#FF171921" Offset="1"/>
+                    <GradientStop Color="#FF5D5968"/>
+                </RadialGradientBrush>
+            </Path.Fill>
+            <Path.Effect>
+                <BlurEffect Radius="1"/>
+            </Path.Effect>
+        </Path>
+        <Path Data="M0.50305595,1.2697373 L22.749788,24.228933 L167.82998,23.865926 L167.74531,0.52106791 z" HorizontalAlignment="Left" Height="24.75" Margin="7.815,-0.25,0,0" VerticalAlignment="Top" Width="168.333" Stroke="White" Grid.Column="3" Grid.ColumnSpan="5">
+            <Path.Effect>
+                <BlurEffect Radius="1"/>
+            </Path.Effect>
+            <Path.Fill>
+                <RadialGradientBrush Opacity="0.7" GradientOrigin="-4,-1" Center="2,1">
+                    <GradientStop Color="#FF5D5968"/>
+                    <GradientStop Color="#FF171921" Offset="1"/>
+                </RadialGradientBrush>
+            </Path.Fill>
+        </Path>
+        <Path x:Name="path2" HorizontalAlignment="Left" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Fill="White" StrokeMiterLimit="2" Grid.RowSpan="3" Data="M28.317147,0 L29.001496,4.4482649 28.777914,4.485307 C14.976388,6.95059 4.499985,19.013985 4.4999859,33.524261 4.499985,47.779968 14.612019,59.6739 28.054627,62.424637 L28.321417,62.475754 28.527724,67.083404 27.981341,66.992882 C12.074498,64.151542 2.205943E-07,50.247967 0,33.524261 2.205943E-07,16.800554 12.074498,2.8969792 27.981341,0.055636287 z" Height="67.083" Margin="7.166,6.308,0,0" RenderTransformOrigin="1.1787328734144,0.49786065330769" Stretch="Fill" Width="29.001">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+            <Path.Effect>
+                <BlurEffect Radius="0"/>
+            </Path.Effect>
+        </Path>
+        <Path x:Name="path1" HorizontalAlignment="Left" Height="39.5" Margin="22.462,20.084,0,0" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="38.456" Fill="White" Grid.RowSpan="2" Data="M18.706106,0 C29.613674,3.6191516E-08 38.456001,8.8423767 38.456001,19.75 38.456001,30.657625 29.613674,39.5 18.706106,39.5 13.252323,39.5 8.3148491,37.289406 4.7408206,33.715359 L4.5868832,33.557705 5.960499,31.202822 6.0217726,31.271879 C9.1564132,34.720768 13.678398,36.886028 18.706106,36.886028 28.170023,36.886028 35.842045,29.213966 35.842045,19.75 35.842045,10.286032 28.170023,2.6139705 18.706106,2.61397 11.756041,2.6139705 5.7723581,6.751564 3.0838997,12.697897 L3.0766448,12.71448 0,13.398307 0.15462885,12.959288 C2.9235541,5.3969584 10.18457,3.6191516E-08 18.706106,0 z" RenderTransformOrigin="0.499999985551638,0.5" Stretch="Fill">
+            <Path.Effect>
+                <BlurEffect Radius="0"/>
+            </Path.Effect>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path x:Name="path" Data="M11.9165,0 C16.543978,-1.4967054E-07 20.555401,2.6376408 22.529343,6.4914945 L22.651224,6.7367609 20.938305,6.863644 20.885975,6.7700332 C19.101583,3.6668197 15.753073,1.5771837 11.9165,1.5771837 6.2062531,1.5771837 1.5771838,6.2062529 1.5771837,11.9165 1.5771838,17.626747 6.2062531,22.255815 11.9165,22.255815 17.626747,22.255815 22.255816,17.626747 22.255816,11.9165 22.255816,11.648832 22.245644,11.38354 22.225666,11.120989 L22.215063,11.001577 23.807989,11.153285 23.817495,11.303279 C23.827789,11.506386 23.833,11.710834 23.833,11.9165 23.833,18.497803 18.497803,23.833 11.9165,23.833 5.3351989,23.833 0,18.497803 0,11.9165 0,5.3351987 5.3351989,-1.4967054E-07 11.9165,0 z" HorizontalAlignment="Left" Height="23.833" Margin="29.416,28.082,0,0" Stretch="Fill" Stroke="White" VerticalAlignment="Top" Width="23.833" RenderTransformOrigin="0.5,0.5" Fill="White" Grid.RowSpan="2" StrokeThickness="0" >
+            <Path.Effect>
+                <BlurEffect Radius="0"/>
+            </Path.Effect>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Data="M34,4.5 C17.7076,4.5 4.5,17.7076 4.5,34 4.5,50.2924 18.128655,64.131583 34.421055,64.131583 50.713455,64.131583 63.921055,50.923983 63.921055,34.631583 63.921055,18.339183 50.2924,4.5 34,4.5 z M34,0 C52.777683,0 68,15.222319 68,34 68,52.777683 52.777683,68 34,68 15.222319,68 0,52.777683 0,34 0,15.222319 15.222319,0 34,0 z" HorizontalAlignment="Left" Height="53.833" Margin="14.247,12.583,0,0" Stretch="Fill" Stroke="#FF1AE6B8" StrokeThickness="0" VerticalAlignment="Top" Width="53.833" RenderTransformOrigin="0.488,0.497" Fill="White" Grid.RowSpan="3" >
+            <Path.Effect>
+                <BlurEffect Radius="0"/>
+            </Path.Effect>
+        </Path>
+        <Ellipse x:Name="ellipse" HorizontalAlignment="Left" Height="12.167" Margin="35.419,33.997,0,0" StrokeMiterLimit="2" VerticalAlignment="Top" Width="12.167" StrokeThickness="8" RenderTransformOrigin="0.5,0.5" Stroke="White" Grid.RowSpan="2"/>
+
+        <Grid Grid.Column="1" Margin="0,0,0,0" >
+            <Grid x:Name="SettingBtnGrid" Margin="0,0,0,0">
+                <Grid Margin="10,10,5,05">
+                    <Path x:Name="settingsCenter" Data="M7.25,3.625 C7.25,5.6270322 5.6270322,7.25 3.625,7.25 C1.6229678,7.25 0,5.6270322 0,3.625 C0,1.6229678 1.6229678,0 3.625,0 C5.6270322,0 7.25,1.6229678 7.25,3.625 z" Fill="White" HorizontalAlignment="Left" Height="7.25" Stretch="Fill" StrokeThickness="8" StrokeMiterLimit="2" VerticalAlignment="Top" Width="7.25" Margin="6.873,6.674,0,0" />
+                    <Path x:Name="settings" Data="M15.5,8.25 C15.5,12.254064 12.254064,15.5 8.25,15.5 C4.2459356,15.5 1,12.254064 1,8.25 C1,4.2459356 4.2459356,1 8.25,1 C12.254064,1 15.5,4.2459356 15.5,8.25 z" HorizontalAlignment="Left" Height="16.5" Stretch="Fill" Stroke="White" StrokeThickness="2" StrokeMiterLimit="2" VerticalAlignment="Top" Width="16.5" Margin="2.205,2.253,0,0" />
+                    <Path x:Name="SettingsPath" Data="M9.3737033,0 L11.498703,0 L11.498703,2.312 L9.3737033,2.312 z M9.3507033,18.531 L11.475703,18.531 L11.475703,20.843 L9.3507033,20.843 z M2.4344066,8.9382045 L2.3078993,11.059435 L-7.1054276E-15,10.921796 L0.12650734,8.8005645 z M20.770654,8.6104181 L20.783709,10.735378 L18.471753,10.749582 L18.458698,8.624622 z M19.243262,15.970031 L17.964316,17.667064 L16.117145,16.274969 L17.396091,14.577936 z M5.3472081,4.2049841 L3.9483583,5.8046228 L2.2071985,4.2820159 L3.6060483,2.6823772 z M2.8057309,17.592792 L1.475846,15.935375 L3.2806757,14.487208 L4.6105606,16.144625 z M16.479496,5.3514164 L14.94835,3.8779108 L16.552911,2.2105835 L18.084057,3.6840891 z" Fill="White" HorizontalAlignment="Left" Height="20.843" Stretch="Fill" StrokeThickness="8" StrokeMiterLimit="2" VerticalAlignment="Top" Width="20.784"/>
+                </Grid>
+                <Ellipse x:Name="SettingEllipseBtn" HorizontalAlignment="Left" Height="26.75" Margin="7.001,7.001,0,0" Stroke="White" VerticalAlignment="Top" Width="26.75" >
+                    <Ellipse.Fill>
+                        <RadialGradientBrush Opacity="0.02" GradientOrigin="4,4" Center="0,0">
+                            <GradientStop Color="#FF171921" Offset="1"/>
+                            <GradientStop Color="#FF5D5968"/>
+                        </RadialGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Button x:Name="settingsbtn" Content="" HorizontalAlignment="Left" Margin="7.001,7.001,0,0" VerticalAlignment="Top" Width="27.167" Background="{x:Null}" Foreground="{x:Null}" Height="27.126" BorderBrush="#FFF9EAEA" RenderTransformOrigin="0.5,0.5" Click="settingsbtn_Click" MouseEnter="settingsbtn_MouseEnter" MouseLeave="settingsbtn_MouseLeave" >
+
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Ellipse x:Name="btnEllipse"  HorizontalAlignment="Left" Height="26.75" Margin="0,0,0,0" Stroke="White"  Width="26.75" >
+                                <Ellipse.Fill>
+                                    <RadialGradientBrush Opacity="0.02" GradientOrigin="4,4" Center="0,0">
+                                        <GradientStop Color="#FF171921" Offset="1"/>
+                                        <GradientStop Color="#FF5D5968"/>
+                                    </RadialGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+
+
+
+            </Grid>
+
+
+
+        </Grid>
+
+        <Grid Name="GridInfoDisplay" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="7" Margin="5,5,7,2" >
+            <Label Name="BasicInfoLabelText" Margin="1,2,1,2" Content="Srijon is the Boss"
+                   Foreground="White" HorizontalContentAlignment="Center"  BorderBrush="White" BorderThickness="1"/>
+        </Grid>
+
+        <Grid Grid.ColumnSpan="8" Grid.RowSpan="8" Grid.Row="3" >
+            <Label Name="BigDigiClock" Margin="36,19,9,30" Content="2 : 30 AM"
+                   Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" BorderThickness="1" FontSize="48"/>
+            <Label Name="BigDigiClockDate" Margin="36,113,10,33" Content="Monday,6 September,2017" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+
+            <Border x:Name="border" Margin="-536,10,19,22" RenderTransformOrigin="0.5,0.5">
+                <Border.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Border.RenderTransform>
+                <Border.LayoutTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Border.LayoutTransform>
+                <Grid>
+                    <Path x:Name="SideRecEffect" Data="M269.33099,125.333 L272,125.333 272,142 257.33301,142 257.33301,138.668 269.33099,138.668 z M0,125.333 L2.6640015,125.333 2.6640015,138.668 13.999999,138.668 13.999999,142 0,142 z M257.33301,0 L272,0 272,16.666 269.33099,16.666 269.33099,3.0019946 257.33301,3.0019946 z M0,0 L13.999999,0 13.999999,3.0019946 2.6640015,3.0019946 2.6640015,16.666 0,16.666 z" Fill="White" HorizontalAlignment="Left" Height="140" Stretch="Fill" VerticalAlignment="Top" Width="270" RenderTransformOrigin="0.5,0.5" StrokeThickness="0">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+
+                    <Rectangle x:Name="btnSettOneRec"   Margin="12,11,198,79" Width="60" Height="50" Stroke="Transparent" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.LayoutTransform>
+                        <Rectangle.Fill>
+                            <RadialGradientBrush Opacity="0.02" GradientOrigin="4,4" Center="0,0">
+                                <GradientStop Color="White" Offset="1"/>
+                                <GradientStop Color="White"/>
+                            </RadialGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle x:Name="btnSettTwoRec"   Margin="109,11,101,79" Width="60" Height="50" Stroke="Transparent" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.LayoutTransform>
+                        <Rectangle.Fill>
+                            <RadialGradientBrush Opacity="0.02" GradientOrigin="4,4" Center="0,0">
+                                <GradientStop Color="White" Offset="1"/>
+                                <GradientStop Color="White"/>
+                            </RadialGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle x:Name="btnSettThreeRec"   Margin="199,11,11,79" Width="60" Height="50" Stroke="Transparent" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.LayoutTransform>
+                        <Rectangle.Fill>
+                            <RadialGradientBrush Opacity="0.02" GradientOrigin="4,4" Center="0,0">
+                                <GradientStop Color="White" Offset="1"/>
+                                <GradientStop Color="White"/>
+                            </RadialGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle x:Name="btnSettFourRec"   Margin="12,77,198,13" Width="60" Height="50" Stroke="Transparent" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.LayoutTransform>
+                        <Rectangle.Fill>
+                            <RadialGradientBrush Opacity="0.02" GradientOrigin="4,4" Center="0,0">
+                                <GradientStop Color="White" Offset="1"/>
+                                <GradientStop Color="White"/>
+                            </RadialGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle x:Name="btnSettFiveRec"   Margin="109,77,101,13" Width="60" Height="50" Stroke="Transparent" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.LayoutTransform>
+                        <Rectangle.Fill>
+                            <RadialGradientBrush Opacity="0.02" GradientOrigin="4,4" Center="0,0">
+                                <GradientStop Color="White" Offset="1"/>
+                                <GradientStop Color="White"/>
+                            </RadialGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle x:Name="btnSettSixRec"   Margin="199,77,11,13" Width="60" Height="50" Stroke="Transparent" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.LayoutTransform>
+                        <Rectangle.Fill>
+                            <RadialGradientBrush Opacity="0.02" GradientOrigin="4,4" Center="0,0">
+                                <GradientStop Color="White" Offset="1"/>
+                                <GradientStop Color="White"/>
+                            </RadialGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button x:Name="btnInSettingsOne"  Content="TeST" HorizontalAlignment="Left" Margin="12.334,11.001,0,0" VerticalAlignment="Top" Width="60" Foreground="White" Height="50" RenderTransformOrigin="0.5,0.5"  BorderThickness="1" BorderBrush="#FFF9EAEA" MouseEnter="btnInSettingsOne_MouseEnter" MouseLeave="btnInSettingsOne_MouseLeave" Click="btnInSettingsOne_Click" >
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                        <Button.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.LayoutTransform>
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+
+                                    <TextBlock Margin="15,15,5,5"><Run Text="Hello"/></TextBlock>
+                                    <Path Data="M269.33099,125.333 L272,125.333 272,142 257.33301,142 257.33301,138.668 269.33099,138.668 z M0,125.333 L2.6640015,125.333 2.6640015,138.668 13.999999,138.668 13.999999,142 0,142 z M257.33301,0 L272,0 272,16.666 269.33099,16.666 269.33099,3.0019946 257.33301,3.0019946 z M0,0 L13.999999,0 13.999999,3.0019946 2.6640015,3.0019946 2.6640015,16.666 0,16.666 z" Fill="White" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="3" Grid.RowSpan="5" Stretch="Fill" VerticalAlignment="Top" Width="60" Height="50" Grid.ColumnSpan="8" RenderTransformOrigin="0.5,0.5"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+
+                    <Button x:Name="btnInSettingsTwo" Content="TeST" HorizontalAlignment="Left" Margin="109.334,11.001,0,0" VerticalAlignment="Top" Width="60" Foreground="White" Height="50" RenderTransformOrigin="0.5,0.5" BorderThickness="1" BorderBrush="#FFF9EAEA" MouseLeave="btnInSettingsTwo_MouseLeave" MouseEnter="btnInSettingsTwo_MouseEnter" Click="btnInSettingsTwo_Click" >
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                        <Button.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.LayoutTransform>
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <TextBlock Margin="15,15,5,5"><Run Text="Hello"/></TextBlock>
+                                    <Path Data="M269.33099,125.333 L272,125.333 272,142 257.33301,142 257.33301,138.668 269.33099,138.668 z M0,125.333 L2.6640015,125.333 2.6640015,138.668 13.999999,138.668 13.999999,142 0,142 z M257.33301,0 L272,0 272,16.666 269.33099,16.666 269.33099,3.0019946 257.33301,3.0019946 z M0,0 L13.999999,0 13.999999,3.0019946 2.6640015,3.0019946 2.6640015,16.666 0,16.666 z" Fill="White" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="3" Grid.RowSpan="5" Stretch="Fill" VerticalAlignment="Top" Width="60" Height="50" Grid.ColumnSpan="8" RenderTransformOrigin="0.5,0.5"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btnInSettingsThree" Content="TeST" HorizontalAlignment="Left" Margin="199.334,11.001,0,0" VerticalAlignment="Top" Width="60" Foreground="White" Height="50" RenderTransformOrigin="0.5,0.5" BorderThickness="1" BorderBrush="#FFF9EAEA" MouseEnter="btnInSettingsThree_MouseEnter" MouseLeave="btnInSettingsThree_MouseLeave" Click="btnInSettingsThree_Click" >
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                        <Button.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.LayoutTransform>
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <TextBlock Margin="15,15,5,5"><Run Text="Hello"/></TextBlock>
+                                    <Path Data="M269.33099,125.333 L272,125.333 272,142 257.33301,142 257.33301,138.668 269.33099,138.668 z M0,125.333 L2.6640015,125.333 2.6640015,138.668 13.999999,138.668 13.999999,142 0,142 z M257.33301,0 L272,0 272,16.666 269.33099,16.666 269.33099,3.0019946 257.33301,3.0019946 z M0,0 L13.999999,0 13.999999,3.0019946 2.6640015,3.0019946 2.6640015,16.666 0,16.666 z" Fill="White" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="3" Grid.RowSpan="5" Stretch="Fill" VerticalAlignment="Top" Width="60" Height="50" Grid.ColumnSpan="8" RenderTransformOrigin="0.5,0.5"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btnInSettingsFour" Content="TeST" HorizontalAlignment="Left" Margin="12.334,77.001,0,0" VerticalAlignment="Top" Width="60" Foreground="White" Height="50" RenderTransformOrigin="0.5,0.5" BorderThickness="1" BorderBrush="#FFF9EAEA" Click="btnInSettingsFour_Click" MouseEnter="btnInSettingsFour_MouseEnter" MouseLeave="btnInSettingsFour_MouseLeave" >
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                        <Button.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.LayoutTransform>
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <TextBlock Margin="15,15,5,5"><Run Text="Hello"/></TextBlock>
+                                    <Path Data="M269.33099,125.333 L272,125.333 272,142 257.33301,142 257.33301,138.668 269.33099,138.668 z M0,125.333 L2.6640015,125.333 2.6640015,138.668 13.999999,138.668 13.999999,142 0,142 z M257.33301,0 L272,0 272,16.666 269.33099,16.666 269.33099,3.0019946 257.33301,3.0019946 z M0,0 L13.999999,0 13.999999,3.0019946 2.6640015,3.0019946 2.6640015,16.666 0,16.666 z" Fill="White" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="3" Grid.RowSpan="5" Stretch="Fill" VerticalAlignment="Top" Width="60" Height="50" Grid.ColumnSpan="8" RenderTransformOrigin="0.5,0.5"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btnInSettingsFive" Content="TeST" HorizontalAlignment="Left" Margin="109.334,77.001,0,0" VerticalAlignment="Top" Width="60" Foreground="White" Height="50" RenderTransformOrigin="0.5,0.5" BorderThickness="1" BorderBrush="#FFF9EAEA" Click="btnInSettingsFive_Click" MouseEnter="btnInSettingsFive_MouseEnter" MouseLeave="btnInSettingsFive_MouseLeave" >
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                        <Button.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.LayoutTransform>
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <TextBlock Margin="15,15,5,5"><Run Text="Hello"/></TextBlock>
+                                    <Path Data="M269.33099,125.333 L272,125.333 272,142 257.33301,142 257.33301,138.668 269.33099,138.668 z M0,125.333 L2.6640015,125.333 2.6640015,138.668 13.999999,138.668 13.999999,142 0,142 z M257.33301,0 L272,0 272,16.666 269.33099,16.666 269.33099,3.0019946 257.33301,3.0019946 z M0,0 L13.999999,0 13.999999,3.0019946 2.6640015,3.0019946 2.6640015,16.666 0,16.666 z" Fill="White" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="3" Grid.RowSpan="5" Stretch="Fill" VerticalAlignment="Top" Width="60" Height="50" Grid.ColumnSpan="8" RenderTransformOrigin="0.5,0.5"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btnInSettingsSix" Content="TeST" HorizontalAlignment="Left" Margin="199.334,77.001,0,0" VerticalAlignment="Top" Width="60" Foreground="White" Height="50" RenderTransformOrigin="0.5,0.5" BorderThickness="1" BorderBrush="#FFF9EAEA" Click="btnInSettingsSix_Click" MouseEnter="btnInSettingsSix_MouseEnter" MouseLeave="btnInSettingsSix_MouseLeave" >
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                        <Button.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.LayoutTransform>
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <TextBlock Margin="15,15,5,5"><Run Text="Hello"/></TextBlock>
+                                    <Path Data="M269.33099,125.333 L272,125.333 272,142 257.33301,142 257.33301,138.668 269.33099,138.668 z M0,125.333 L2.6640015,125.333 2.6640015,138.668 13.999999,138.668 13.999999,142 0,142 z M257.33301,0 L272,0 272,16.666 269.33099,16.666 269.33099,3.0019946 257.33301,3.0019946 z M0,0 L13.999999,0 13.999999,3.0019946 2.6640015,3.0019946 2.6640015,16.666 0,16.666 z" Fill="White" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="3" Grid.RowSpan="5" Stretch="Fill" VerticalAlignment="Top" Width="60" Height="50" Grid.ColumnSpan="8" RenderTransformOrigin="0.5,0.5"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!--<Grid Grid.Column="7" Margin="2,2,2,13" Name="CloseGrid">
+            <Rectangle Name="Close1" HorizontalAlignment="Left" Height="3" Margin="4,9,0,0" Stroke="White" VerticalAlignment="Top" Width="22" StrokeThickness="2" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+                <Rectangle.Fill>
+                    <RadialGradientBrush Opacity="0.7" GradientOrigin="4,4" Center="0,0">
+                        <GradientStop Color="#FF171921" Offset="1"/>
+                        <GradientStop Color="White"/>
+                    </RadialGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Name="Close2" HorizontalAlignment="Left" Height="3" Margin="4,9,0,0" Stroke="White" VerticalAlignment="Top" Width="22" StrokeThickness="2" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+                <Rectangle.Fill>
+                    <RadialGradientBrush Opacity="0.7" GradientOrigin="4,4" Center="0,0">
+                        <GradientStop Color="#FF171921" Offset="1"/>
+                        <GradientStop Color="White"/>
+                    </RadialGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Grid>-->
+        <Rectangle Name="closeBKRect" Margin="1,2,3,14" Grid.Column="7" Fill="White" Opacity="0"/>
+        <Rectangle Name="Close2" HorizontalAlignment="Left" Height="3" Margin="5,11,0,0" Stroke="White" VerticalAlignment="Top" Width="22" StrokeThickness="2" RenderTransformOrigin="0.5,0.5" Grid.Column="7" Fill="White">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-45"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Button x:Name="closebtn" Margin="1,2,3,14" Grid.Column="7" Click="closebtn_Click" MouseEnter="closebtn_MouseEnter" MouseLeave="closebtn_MouseLeave" Background="#FFFDFDFD" BorderBrush="#FFFBFBFB" BorderThickness="1">
+            <Button.Template>
+                <ControlTemplate>
+                    <Rectangle Name="Close1" HorizontalAlignment="Left" Height="3" Margin="4,9,0,0" Stroke="White" VerticalAlignment="Top" Width="22" StrokeThickness="2" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="45"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.Fill>
+                            <RadialGradientBrush Opacity="0.7" GradientOrigin="4,4" Center="0,0">
+                                <GradientStop Color="#FF171921" Offset="1"/>
+                                <GradientStop Color="#FFFBFBFB"/>
+                            </RadialGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </ControlTemplate>
+
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="minimizebtn" Margin="0,2,2,14" Grid.Column="6" Click="minimizebtn_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Rectangle  HorizontalAlignment="Left" Height="3" Margin="4,14,0,0" Stroke="White" VerticalAlignment="Top" Width="22" StrokeThickness="2" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="0"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.Fill>
+                            <RadialGradientBrush Opacity="0.7" GradientOrigin="4,4" Center="0,0">
+                                <GradientStop Color="#FF171921" Offset="1"/>
+                                <GradientStop Color="White"/>
+                            </RadialGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </ControlTemplate>
+
+            </Button.Template>
+        </Button>
+
+    </Grid>
+</Window>
